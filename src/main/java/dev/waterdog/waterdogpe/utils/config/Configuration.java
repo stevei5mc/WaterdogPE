@@ -79,6 +79,11 @@ public abstract class Configuration {
         this.save(this.serialize(this.values));
     }
 
+    public void save(File file) {
+        this.file = file;
+        save();
+    }
+
     protected void save(String content) {
         try {
             File parentFile = this.file.getParentFile();
